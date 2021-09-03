@@ -7,17 +7,22 @@ end
 let s:save_cpo = &cpo
 set cpo&vim
 
-let s:homeposition_array = [0]
-let s:idx = 0
-
 " script
+
+function! homeposition#init() abort
+  let s:homeposition_array = [0]
+  let s:idx = 0
+  let s:now = 0
+  let s:brackets_stack = stack#Stack()
+endfunction
+
 function! homeposition#execute() abort
-  let source_code = getline(0, '$')
-  for line in source_code
-    for i in range(strlen(line))
-      call homeposition#judge_order(line[i])
-    endfor
-  endfor
+  call homeposition#init()
+  const source_code = join(getline(0, '$'), '')
+  while s:now != strlen(source_code)
+    call homeposition#judge_order(source_code[s:now])
+    let s:now = s:now + 1
+  endwhile
 endfunction
 
 function! homeposition#judge_order(char) abort
@@ -33,7 +38,12 @@ function! homeposition#judge_order(char) abort
     endif
     let s:idx = s:idx + 1
   elseif a:char == 's'
-    echo s:homeposition_array[s:idx]
+    const converted_char = nr2char(s:homeposition_array[s:idx])
+    echon converted_char
+  elseif a:char == 'a'
+    let s:homeposition_array[s:idx] = getchar()
+  elseif a:char == 'd'
+    call s:brackets_stack.push(s:now)
   end
 endfunction
 
