@@ -26,10 +26,12 @@ function! homeposition#execute() abort
 endfunction
 
 function! homeposition#judge_order(char) abort
+  " echo s:now
+  " echo s:homeposition_array[s:idx]
   if a:char == 'j'
     let s:homeposition_array[s:idx] = s:homeposition_array[s:idx] + 1
   elseif a:char == 'k'
-    let s:homeposition_array[s:idx] = s:homeposition_array[s:idx] + 1
+    let s:homeposition_array[s:idx] = s:homeposition_array[s:idx] - 1
   elseif a:char == 'h'
     let s:idx = s:idx - 1
   elseif a:char == 'l'
@@ -44,6 +46,12 @@ function! homeposition#judge_order(char) abort
     let s:homeposition_array[s:idx] = getchar()
   elseif a:char == 'd'
     call s:brackets_stack.push(s:now)
+  elseif a:char == 'f'
+    if s:homeposition_array[s:idx] > 0
+      let s:now = s:brackets_stack.top()
+    else
+      call s:brackets_stack.pop()
+    endif
   end
 endfunction
 
