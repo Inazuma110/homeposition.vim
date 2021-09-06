@@ -26,8 +26,6 @@ function! homeposition#execute() abort
 endfunction
 
 function! homeposition#judge_order(char) abort
-  " echo s:now
-  " echo s:homeposition_array[s:idx]
   if a:char == 'j'
     let s:homeposition_array[s:idx] = s:homeposition_array[s:idx] + 1
   elseif a:char == 'k'
@@ -55,6 +53,13 @@ function! homeposition#judge_order(char) abort
   end
 endfunction
 
+function! homeposition#bf2hp() abort
+
+endfunction
+
+function! homeposition#hp2bf() abort
+
+endfunction
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

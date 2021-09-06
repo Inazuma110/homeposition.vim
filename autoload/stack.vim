@@ -1,3 +1,12 @@
+scriptencoding utf-8
+
+if !exists('g:loaded_homeposition')
+  finish
+end
+
+let s:save_cpo = &cpo
+set cpo&vim
+
 let s:Stack = {'vals': [1]}
 function! stack#Stack() abort
   return deepcopy(s:Stack)
@@ -15,3 +24,5 @@ function! s:Stack.top() abort
   return self.vals[len(self.vals)-1]
 endfunction
 
+let &cpo = s:save_cpo
+unlet s:save_cpo
