@@ -2,8 +2,9 @@
 [HomePosition](https://github.com/Inazuma110/home_position) support for vim.
 
 ## Features
-- ✨ Syntax highlighting
+- ✨ Syntax highlighting!
 - 🏃 Run HomePosition by only Vimscript!
+- ✡️ Interconversion between HomePosition and Brainfuck!
 
 ## Requirements
 Vim or Neovim.
@@ -21,7 +22,7 @@ Plug 'Inazuma110/homeposition.vim'
 ```
 
 ## Usage
-
+The file extension must be `hp`.
 ### Run HomePosition
 ```vim
 :HomePosition

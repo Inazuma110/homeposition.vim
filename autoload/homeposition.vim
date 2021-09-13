@@ -54,11 +54,25 @@ function! homeposition#judge_order(char) abort
 endfunction
 
 function! homeposition#bf2hp() abort
-
+  %s/+/j/ge
+  %s/-/k/ge
+  %s/>/l/ge
+  %s/</h/ge
+  %s/\[/d/ge
+  %s/\]/f/ge
+  %s/\./s/ge
+  %s/,/a/ge
 endfunction
 
 function! homeposition#hp2bf() abort
-
+  %s/j/+/ge
+  %s/k/-/ge
+  %s/l/>/ge
+  %s/h/</ge
+  %s/d/\[/ge
+  %s/f/\]/ge
+  %s/s/\./ge
+  %s/a/,/ge
 endfunction
 
 let &cpo = s:save_cpo
