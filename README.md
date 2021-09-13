@@ -27,6 +27,15 @@ The file extension must be `hp`.
 ```vim
 :HomePosition
 ```
+### Convert from Brainfuck to HomePosition
+```vim
+:BF2HP
+```
+### Convert from HomePosition to Brainfuck
+```vim
+:HP2BF
+```
+
 
 ## Contribution
 Welcome!!
