@@ -7,8 +7,7 @@
 - ✡️ Interconversion between HomePosition and Brainfuck!
 
 ## Requirements
-Vim or Neovim.
-These have to be able to use `const`.
+Vim8.2+ or Neovim0.4+
 
 ## Install
 Using [dein.vim](https://github.com/Shougo/dein.vim)
