@@ -1,3 +1,9 @@
+" =============================================================================
+" FILE: homeposition.vim
+" Maintainer: Shuta Ito <c011703534@edu.teu.ac.jp>
+" LICENCE: MIT licence
+" =============================================================================
+
 scriptencoding utf-8
 
 if !exists('g:loaded_homeposition')

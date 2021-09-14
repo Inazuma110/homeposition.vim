@@ -1,6 +1,9 @@
+" =============================================================================
 " Vim syntax file
 " Language: HomePosition
 " Maintainer: Shuta Ito <c011703534@edu.teu.ac.jp>
+" LICENCE: MIT licence
+" =============================================================================
 
 if exists('b:current_syntax')
   finish
