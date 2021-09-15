@@ -34,6 +34,8 @@ homeposition#execute()
 		executes it.  Originally, HomePosition was implemented in the
 		Java language, but this plugin is implemented in Vimscript, so
 		it does not require any dependency.
+		As a return value, the array after the program execution is
+		returned.
 
 						*homeposition#bf2hp()*
 homeposition#bf2hp()
