@@ -15,7 +15,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " script
-command! HomePosition call homeposition#execute()
+command! HomePosition call homeposition#execute(join(getline(0, '$'), ''))
 command! HP2BF call homeposition#hp2bf()
 command! BF2HP call homeposition#bf2hp()
 

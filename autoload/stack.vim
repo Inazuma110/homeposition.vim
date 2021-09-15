@@ -13,7 +13,7 @@ end
 let s:save_cpo = &cpo
 set cpo&vim
 
-let s:Stack = {'vals': [1]}
+let s:Stack = {'vals': []}
 function! stack#Stack() abort
   return deepcopy(s:Stack)
 endfunction

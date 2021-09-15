@@ -22,13 +22,13 @@ function! homeposition#init() abort
   let s:brackets_stack = stack#Stack()
 endfunction
 
-function! homeposition#execute() abort
+function! homeposition#execute(source_code) abort
   call homeposition#init()
-  const source_code = join(getline(0, '$'), '')
-  while s:now != strlen(source_code)
-    call homeposition#judge_order(source_code[s:now])
+  while s:now != strlen(a:source_code)
+    call homeposition#judge_order(a:source_code[s:now])
     let s:now = s:now + 1
   endwhile
+  return s:homeposition_array
 endfunction
 
 function! homeposition#judge_order(char) abort
